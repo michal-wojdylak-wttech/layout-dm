@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Dummy User <dummy_user@gmail.com>"]
 packages = [
-    { include = "trainer", from = "src/trainer", format="sdist" },
+    { include = "trainer", from = "src" },
 ]
 
 [tool.poetry.dependencies]
