@@ -25,7 +25,7 @@ def convert_layout_to_image(
 ):
     H, W = canvas_size
     if names:
-        font = ImageFont.truetype("Arial", W // 10)
+        font = ImageFont.load_default()
 
     if resources:
         img = resources["img_bg"].resize((W, H))
@@ -127,8 +127,8 @@ def save_label(
     x_offset, y_offset = 500, 100
 
     img = Image.new("RGBA", (1000, 1000))
-    fnt = ImageFont.truetype("Arial", 40)
-    fnt_sm = ImageFont.truetype("Arial", 32)
+    fnt = ImageFont.load_default()
+    fnt_sm = ImageFont.load_default()
     d = ImageDraw.Draw(img)
 
     if isinstance(labels, LongTensor):
@@ -197,8 +197,8 @@ def save_label_with_size(
     B = 32
 
     img = Image.new("RGBA", (1000, 1000))
-    fnt = ImageFont.truetype("Arial", 40)
-    fnt_sm = ImageFont.truetype("Arial", 32)
+    fnt = ImageFont.load_default()
+    fnt_sm = ImageFont.load_default()
     d = ImageDraw.Draw(img)
 
     for i, l in enumerate(labels):
@@ -282,8 +282,8 @@ def save_relation(
 
     space, pad = 6, 6
     img = Image.new("RGBA", (1000, 1000))
-    fnt = ImageFont.truetype("Arial", 20)
-    fnt_sm = ImageFont.truetype("Arial", 16)
+    fnt = ImageFont.load_default()
+    fnt_sm = ImageFont.load_default()
     d = ImageDraw.Draw(img)
 
     def draw_text(x_offset, y_offset, text, color=None, first=False):
